@@ -1,0 +1,64 @@
+.flex-card {
+  display: flex;
+  background-color:none;
+  padding: 10px;
+
+}
+
+.flex-card .systemcard{
+  background-color:none;
+  border: 1px solid darkcyan;
+  border-radius: 5px;
+  width: 19.3vw;
+  height: 95vh;
+  padding: px;
+  margin: 2px;
+}
+
+.mitad {
+  height: 46vh;
+}
+
+.headercardpatient {
+  background-color: #1c4e92;
+  color:white;
+  padding: 2px;
+}
+
+.headercardpatient h5 {
+font-size: 1rem;
+}
+
+.flex-card .systemcard h5{
+  font-size: 1.2rem;
+  
+}
+
+.flex-card .systemcard p{
+    font-size: 0.8rem;
+    margin: 0 0 0 2px;
+}
+.identifier{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(192, 95, 95);
+  border-radius: 10px;
+  color: white;
+  width: 10%;
+  height: 10%;
+  margin-top:1px;
+}
+
+@media (max-width: 512px) {
+  .flex-card{
+    flex-direction: column;
+    padding: 0px;
+  }
+
+  .flex-card .systemcard{
+    width: 100vw;
+    height: 100vh;
+  }
+}
+

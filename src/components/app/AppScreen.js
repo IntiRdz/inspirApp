@@ -1,34 +1,29 @@
 import React from 'react';
-import { Sidebar } from './Sidebar';
-import { NoteScreen } from '../notes/NoteScreen';
-import { NothingSelected } from './NothingSelected';
-import { useSelector } from 'react-redux';
-
+import { useDispatch, useSelector } from 'react-redux'
+//import { Sidebar } from './Sidebar';
+import { VisorBeds } from '../patients/VisorBeds';
+import { startLogout } from '../../actions/auth';
 
 export const AppScreen = () => {
-
-    const { active } = useSelector( state => state.notes );
-
+   
+    const dispatch = useDispatch();
+    const hanleLogout = () => {
+        dispatch( startLogout() )
+    }
 
     return (
-        <div 
-            className="journal__main-content animate__animated animate__fadeIn animate__faster"
-        >
-            
-            <Sidebar />
+            <main className="contenido animate__animated animate__fadeIn animate__faster">
+                <h1 className="visor-title">Pacientes Hospitalizados actualmente</h1>
+                <VisorBeds status="Hospitalizado" />
 
-
-            <main>
-
-                {
-                    ( active ) 
-                        ? ( <NoteScreen /> )
-                        : ( <NothingSelected /> )
-                }
+                <button 
+                    type="button" 
+                    className="btn btn-primary"
+                    onClick={ hanleLogout }
+                >
+                    Cerrar Sesión
+                </button>
 
             </main>
-
-
-        </div>
     )
 }

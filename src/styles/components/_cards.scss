@@ -1,0 +1,48 @@
+
+
+/* tarjeta 1 */
+/* .card-header {
+    background: linear-gradient(-90deg,#BF019F,#f28a57);
+    box-shadow: 1px 5px 15px #a2a2a2;
+    height: 50x;
+    margin-top: 10px;
+} */
+
+/* tarjeta 2 */
+/* .card-header {
+    background: linear-gradient(-90deg,#8e2de2,#4a00e0);
+    box-shadow: 1px 7px 15px #a2a2a2;
+    height: 120x;
+    margin: -25px -25px 0px -25px;
+}
+ */
+* /* tarjeta 3 */
+.card-header {
+/*     background: linear-gradient(-90deg,#BF019F,#f28a57);
+    box-shadow: 1px 5px 15px #a2a2a2; */
+    /* height: 120x; */
+    font-size: 1rem
+  
+}
+
+.card-header h5 {
+    font-size: 1rem
+      
+}
+
+.card-body  {
+/*     background:#a2a2a2;
+    box-shadow: 1px 5px 15px #a2a2a2; */
+    /* height: 100x; */
+
+}
+
+.card-body p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.card:hover{
+    box-shadow: 1px 1px 20px #d2d2d2;
+}
+

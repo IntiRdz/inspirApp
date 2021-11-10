@@ -40,8 +40,6 @@ export const AppRouter = () => {
     const [ checking, setChecking ] = useState(true);
     const [ isLoggedIn, setIsLoggedIn ] = useState(false);
 
-
-
     useEffect(() => {
         
         firebase.auth().onAuthStateChanged( async(user) => {
@@ -68,7 +66,6 @@ export const AppRouter = () => {
         )
     }
 
-    
     return (
         <Router>
             <div>
@@ -192,6 +189,7 @@ export const AppRouter = () => {
                     />
 
                     <Redirect to="/auth/login" />
+                    
                 </Switch>
             </div>
         </Router>

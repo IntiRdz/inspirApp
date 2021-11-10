@@ -1,17 +1,17 @@
 import React, { useMemo } from 'react';
 import { useParams, Redirect } from 'react-router-dom';
-import { getHeroById } from '../../../selectors/getHeroById';
+import { getPatientById } from '../../../selectors/getPatientById';
 import { Link } from 'react-router-dom';
 import { Brain } from '../../../assets/icons/Brain';
 
 export const Neurological = ( ) => {
 
-    const { heroeId } = useParams();
+    const { patientId } = useParams();
 
-    const hero = useMemo(() => getHeroById( heroeId ), [ heroeId ]);
+    const patient = useMemo(() => getPatientById( patientId ), [ patientId ]);
 
 
-    if ( !hero ) {
+    if ( !patient ) {
         return <Redirect to="/" />;
     }
 
@@ -28,7 +28,7 @@ export const Neurological = ( ) => {
         religion,
         pacExpediente,
         cama
-    } = hero;
+    } = patient;
     
     return (
         <>

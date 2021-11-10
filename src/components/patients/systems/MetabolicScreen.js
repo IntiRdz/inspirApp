@@ -1,16 +1,16 @@
 import React, { useMemo } from 'react';
 import { useParams, Redirect } from 'react-router-dom';
-import { getHeroById } from '../../../selectors/getHeroById';
+import { getPatientById } from '../../../selectors/getPatientById';
 import { Link } from 'react-router-dom';
 
-export const HematologyScreen = ( ) => {
+export const MetabolicScreen = ( ) => {
 
-    const { heroeId } = useParams();
+    const { patientId } = useParams();
 
-    const hero = useMemo(() => getHeroById( heroeId ), [ heroeId ]);
+    const patient = useMemo(() => getPatientById( patientId ), [ patientId ]);
 
 
-    if ( !hero ) {
+    if ( !patient ) {
         return <Redirect to="/" />;
     }
 
@@ -26,14 +26,14 @@ export const HematologyScreen = ( ) => {
         pacGen,
         religion,
         cama
-    } = hero;
+    } = patient;
     
     return (
             <div className="card m-1 animate__animated animate__fadeIn h-100 w-100" style={ { minHeight: 450 }}>
                     <div className="card-header bg-primary text-white">
                         <div className="row">
                             <div div className="col-9">
-                                <h5>Hematology</h5>
+                                <h5>Metabolic</h5>
                             </div>
                             <div className="col-3">
                                 <i className="far fa-moon"></i>

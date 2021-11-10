@@ -1,17 +1,17 @@
 import React, { useMemo } from 'react';
 import { useParams, Redirect } from 'react-router-dom';
-import { getHeroById } from '../../../selectors/getHeroById';
+import { getPatientById } from '../../../selectors/getPatientById';
 import { Link } from 'react-router-dom';
-import { Heart } from '../../../assets/icons/Heart';
+import { Stomach } from '../../../assets/icons/Stomach';
 
-export const CardioHemodynamic = ( ) => {
+export const Digestive = ( ) => {
 
-    const { heroeId } = useParams();
+    const { patientId } = useParams();
 
-    const hero = useMemo(() => getHeroById( heroeId ), [ heroeId ]);
+    const patient = useMemo(() => getPatientById( patientId ), [ patientId ]);
 
 
-    if ( !hero ) {
+    if ( !patient ) {
         return <Redirect to="/" />;
     }
 
@@ -26,17 +26,16 @@ export const CardioHemodynamic = ( ) => {
         pacFN,
         pacGen,
         religion,
-        pacExpediente,
         cama
-    } = hero;
+    } = patient;
     
     return (
-        <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to={ `./cardiohemodynamic/${ id }` }>
+        <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to={ `./digestive/${ id }` }>
             <div className="cardsystem">
-                <Heart fill='white'/>
+                <Stomach fill='white'/>
                 <div className="row card__name">
                     <div className="col-10 card__text">
-                    <h1 className="name__text">Cardiohemodinámico</h1>
+                    <h1 className="name__text">Digestivo</h1>
                     </div>
                     <div className="col-2 identifier">
                         {cama }
@@ -51,6 +50,6 @@ export const CardioHemodynamic = ( ) => {
                     </p>
                 </div>
             </div>
-         </Link>
+        </Link>
     )
 }

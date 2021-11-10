@@ -15,7 +15,7 @@ export const PatientCard = ({
 }) => {
 
     return (
-        <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to={ `./hero/${ id }` }>
+        <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to={ `./patient/${ id }` }>
             <div className="card animate__animated animate__fadeIn">
                 <div className="card-header text-white bg-primary">
                     <div className="row">

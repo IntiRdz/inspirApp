@@ -1,17 +1,17 @@
 import React, { useMemo } from 'react';
 import { useParams, Redirect } from 'react-router-dom';
-import { getHeroById } from '../../../selectors/getHeroById';
+import { getPatientById } from '../../../selectors/getPatientById';
 import { Link } from 'react-router-dom';
-import { HistoryClock } from '../../../assets/icons/HistoryClock';
+import { Lung } from '../../../assets/icons/Lung';
 
-export const Evolution = ( ) => {
+export const Respiratory = ( ) => {
 
-    const { heroeId } = useParams();
+    const { patientId } = useParams();
 
-    const hero = useMemo(() => getHeroById( heroeId ), [ heroeId ]);
+    const patient = useMemo(() => getPatientById( patientId ), [ patientId ]);
 
 
-    if ( !hero ) {
+    if ( !patient ) {
         return <Redirect to="/" />;
     }
 
@@ -27,15 +27,15 @@ export const Evolution = ( ) => {
         pacGen,
         religion,
         cama
-    } = hero;
+    } = patient;
     
     return (
-        <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to={ `./evolution/${ id }` }>
+        <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to={ `./respiratory/${ id }` }>
             <div className="cardsystem">
-                <HistoryClock fill='white'/>
+                <Lung fill='white'/>
                 <div className="row card__name">
                     <div className="col-10 card__text">
-                    <h1 className="name__text">Evolución</h1>
+                    <h1 className="name__text">Respiratorio</h1>
                     </div>
                     <div className="col-2 identifier">
                         {cama }

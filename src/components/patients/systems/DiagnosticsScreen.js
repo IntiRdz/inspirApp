@@ -1,16 +1,16 @@
 import React, { useMemo } from 'react';
 import { useParams, Redirect } from 'react-router-dom';
-import { getHeroById } from '../../../selectors/getHeroById';
+import { getPatientById } from '../../../selectors/getPatientById';
 import { Link } from 'react-router-dom';
 
-export const PrescriptionScreen = ( ) => {
+export const DiagnosticsScreen = ( ) => {
 
-    const { heroeId } = useParams();
+    const { patientId } = useParams();
 
-    const hero = useMemo(() => getHeroById( heroeId ), [ heroeId ]);
+    const patient = useMemo(() => getPatientById( patientId ), [ patientId ]);
 
 
-    if ( !hero ) {
+    if ( !patient ) {
         return <Redirect to="/" />;
     }
 
@@ -26,14 +26,16 @@ export const PrescriptionScreen = ( ) => {
         pacGen,
         religion,
         cama
-    } = hero;
+    } = patient;
     
     return (
+        <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to={ `./diagnostics/${ id }` }>
+            {/* <div className="card m-1 animate__animated animate__fadeIn" style={ { minWidth: 300, maxWidth: 600,  minHeight: 450, maxHeight: 250 }}> */}
             <div className="card m-1 animate__animated animate__fadeIn h-100 w-100">
-                    <div className="card-header bg-primary text-white">                        
+                    <div className="card-header bg-primary text-white">
                         <div className="row">
                             <div div className="col-9">
-                                <h5>Prescription</h5>
+                                <h5>Diagnostics</h5>
                             </div>
                             <div className="col-3">
                                 <i className="far fa-moon"></i>
@@ -49,5 +51,6 @@ export const PrescriptionScreen = ( ) => {
                         <p className="card-text"> { cama } </p>
                     </div>
             </div>
+        </Link>
     )
 }

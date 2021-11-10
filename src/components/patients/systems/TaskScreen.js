@@ -1,16 +1,16 @@
 import React, { useMemo } from 'react';
 import { useParams, Redirect } from 'react-router-dom';
-import { getHeroById } from '../../../selectors/getHeroById';
+import { getPatientById } from '../../../selectors/getPatientById';
 import { Link } from 'react-router-dom';
 
 export const TaskScreen = ( ) => {
 
-    const { heroeId } = useParams();
+    const { patientId } = useParams();
 
-    const hero = useMemo(() => getHeroById( heroeId ), [ heroeId ]);
+    const patient = useMemo(() => getPatientById( patientId ), [ patientId ]);
 
 
-    if ( !hero ) {
+    if ( !patient ) {
         return <Redirect to="/" />;
     }
 
@@ -26,7 +26,7 @@ export const TaskScreen = ( ) => {
         pacGen,
         religion,
         cama
-    } = hero;
+    } = patient;
     
     return (
             <div className="card m-1 animate__animated animate__fadeIn h-100 w-100">

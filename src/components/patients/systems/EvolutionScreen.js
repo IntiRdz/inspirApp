@@ -1,16 +1,16 @@
 import React, { useMemo } from 'react';
 import { useParams, Redirect } from 'react-router-dom';
-import { getHeroById } from '../../../selectors/getHeroById';
+import { getPatientById } from '../../../selectors/getPatientById';
 import { Link } from 'react-router-dom';
 
-export const HistoryCurrentScreen = ( ) => {
+export const EvolutionScreen = ( ) => {
 
-    const { heroeId } = useParams();
+    const { patientId } = useParams();
 
-    const hero = useMemo(() => getHeroById( heroeId ), [ heroeId ]);
+    const patient = useMemo(() => getPatientById( patientId ), [ patientId ]);
 
 
-    if ( !hero ) {
+    if ( !patient ) {
         return <Redirect to="/" />;
     }
 
@@ -26,7 +26,7 @@ export const HistoryCurrentScreen = ( ) => {
         pacGen,
         religion,
         cama
-    } = hero;
+    } = patient;
     
     return (
 
@@ -34,7 +34,7 @@ export const HistoryCurrentScreen = ( ) => {
                     <div className="card-header bg-primary text-white">
                         <div className="row">
                             <div div className="col-9">
-                                <h5>HistoryCurrent</h5>
+                                <h5>Evolution</h5>
                             </div>
                             <div className="col-3">
                                 <i className="far fa-moon"></i>

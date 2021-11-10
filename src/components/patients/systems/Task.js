@@ -1,17 +1,17 @@
 import React, { useMemo } from 'react';
 import { useParams, Redirect } from 'react-router-dom';
-import { getHeroById } from '../../../selectors/getHeroById';
+import { getPatientById } from '../../../selectors/getPatientById';
 import { Link } from 'react-router-dom';
-import { FileMedical } from '../../../assets/icons/FileMedical';
+import { TaskIco } from '../../../assets/icons/TaskIco';
 
-export const Prescription = ( ) => {
+export const Task = ( ) => {
 
-    const { heroeId } = useParams();
+    const { patientId } = useParams();
 
-    const hero = useMemo(() => getHeroById( heroeId ), [ heroeId ]);
+    const patient = useMemo(() => getPatientById( patientId ), [ patientId ]);
 
 
-    if ( !hero ) {
+    if ( !patient ) {
         return <Redirect to="/" />;
     }
 
@@ -27,15 +27,15 @@ export const Prescription = ( ) => {
         pacGen,
         religion,
         cama
-    } = hero;
+    } = patient;
     
     return (
-        <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to={ `./prescription/${ id }` }>
+        <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to={ `./task/${ id }` }>
             <div className="cardsystem">
-                <FileMedical fill='white' width='7.7rem' height='7.7rem'/>
+                <TaskIco fill='white'/>
                 <div className="row card__name">
                     <div className="col-10 card__text">
-                    <h1 className="name__text">Indicaciones</h1>
+                    <h1 className="name__text">Pendientes</h1>
                     </div>
                     <div className="col-2 identifier">
                         {cama }

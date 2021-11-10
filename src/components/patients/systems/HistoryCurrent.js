@@ -1,23 +1,24 @@
 import React, { useMemo } from 'react';
 import { useParams, Redirect } from 'react-router-dom';
-import { getHeroById } from '../../../selectors/getHeroById';
+import { getPatientById } from '../../../selectors/getPatientById';
 import { Link } from 'react-router-dom';
-import { TaskIco } from '../../../assets/icons/TaskIco';
+import { BookMedical } from '../../../assets/icons/BookMedical';
 
-export const Task = ( ) => {
+export const HistoryCurrent = ( ) => {
 
-    const { heroeId } = useParams();
+    const { patientId } = useParams();
 
-    const hero = useMemo(() => getHeroById( heroeId ), [ heroeId ]);
+    const patient = useMemo(() => getPatientById( patientId ), [ patientId ]);
 
 
-    if ( !hero ) {
+    if ( !patient ) {
         return <Redirect to="/" />;
     }
 
     const {
         id,
         pacFechaRegistro,
+        pacExpediente,
         status,
         pacApe1,
         pacApe2,
@@ -27,25 +28,25 @@ export const Task = ( ) => {
         pacGen,
         religion,
         cama
-    } = hero;
+    } = patient;
     
     return (
-        <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to={ `./task/${ id }` }>
+        <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to={ `./historycurrent/${ id }` }>
             <div className="cardsystem">
-                <TaskIco fill='white'/>
-                <div className="row card__name">
+                <BookMedical fill='dark'/>
+                <div className="row card__name"> 
                     <div className="col-10 card__text">
-                    <h1 className="name__text">Pendientes</h1>
+                    <h1 className="name__text--black">Antecedentes y Padecimiento</h1>
                     </div>
                     <div className="col-2 identifier">
                         {cama }
                     </div>
                         </div>
                 <div className="card__body">
-                    <p className="title__text">
+                    <p className="title__text--black">
                     I received a .
                     </p>
-                    <p className="description__text">
+                    <p className="description__text--black">
                     “ I was an EMT "
                     </p>
                 </div>

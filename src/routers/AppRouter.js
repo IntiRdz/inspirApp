@@ -16,6 +16,23 @@ import { login } from '../actions/auth';
 import { PublicRoute } from './PublicRoute';
 import { startLoadingNotes } from '../actions/notes';
 
+import { PatientScreen } from '../components/patients/PatientScreen';
+import { SearchScreen } from '../components/search/SearchScreen';
+import { MarvelScreen } from '../components/marvel/MarvelScreen';
+
+import { IdentiFileScreen }         from '../components/patients/systems/IdentiFileScreen';
+import { CardioHemodynamicScreen }  from '../components/patients/systems/CardioHemodynamicScreen';
+import { DiagnosticsScreen }        from '../components/patients/systems/DiagnosticsScreen';
+import { DigestiveScreen }          from '../components/patients/systems/DigestiveScreen';
+import { EvolutionScreen }          from '../components/patients/systems/EvolutionScreen';
+import { HematologyScreen }         from '../components/patients/systems/HematologyScreen';
+import { HistoryCurrentScreen } from '../components/patients/systems/HistoryCurrentScreen';
+import { MetabolicScreen } from '../components/patients/systems/MetabolicScreen';
+import { NeurologicalScreen } from '../components/patients/systems/NeurologicalScreen';
+import { PrescriptionScreen } from '../components/patients/systems/PrescriptionScreen';
+import { RespiratoryScreen } from '../components/patients/systems/RespiratoryScreen';
+import { TaskScreen } from '../components/patients/systems/TaskScreen';
+
 export const AppRouter = () => {
 
     const dispatch = useDispatch();
@@ -47,7 +64,7 @@ export const AppRouter = () => {
 
     if ( checking ) {
         return (
-            <h1>Wait...</h1>
+            <h1>Espere por Favor...</h1>
         )
     }
 
@@ -55,7 +72,7 @@ export const AppRouter = () => {
     return (
         <Router>
             <div>
-                <Switch>
+            <Switch>
                     <PublicRoute 
                         path="/auth"
                         component={ AuthRouter }
@@ -69,9 +86,112 @@ export const AppRouter = () => {
                         component={ AppScreen }
                     />
 
+                    <PrivateRoute 
+                        exact
+                        isAuthenticated={ isLoggedIn }
+                        path="/patient/:patientId"
+                        component={ PatientScreen }
+                    />
+
+                    <PrivateRoute 
+                        exact
+                        isAuthenticated={ isLoggedIn }
+                        path="/search"
+                        component={ SearchScreen }
+                    />
+
+                    <PrivateRoute 
+                        exact
+                        isAuthenticated={ isLoggedIn }
+                        path="/marvel"
+                        component={ MarvelScreen }
+                    />
+
+                    <PrivateRoute 
+                        exact
+                        isAuthenticated={ isLoggedIn }
+                        path="/patient/identifile/:patientId"
+                        component={ IdentiFileScreen }
+                    />
+
+                    <PrivateRoute 
+                        exact
+                        isAuthenticated={ isLoggedIn }
+                        path="/patient/cardiohemodynamic/:patientId"
+                        component={ CardioHemodynamicScreen }
+                    />
+
+                    <PrivateRoute 
+                        exact
+                        isAuthenticated={ isLoggedIn }
+                        path="/patient/diagnostics/:patientId"
+                        component={ DiagnosticsScreen }
+                    />
+
+                    <PrivateRoute 
+                        exact
+                        isAuthenticated={ isLoggedIn }
+                        path="/patient/digestive/:patientId"
+                        component={ DigestiveScreen }
+                    />
+
+                    <PrivateRoute 
+                        exact
+                        isAuthenticated={ isLoggedIn }
+                        path="/patient/evolution/:patientId"
+                        component={ EvolutionScreen }
+                    />
+
+                    <PrivateRoute 
+                        exact
+                        isAuthenticated={ isLoggedIn }
+                        path="/patient/hematology/:patientId"
+                        component={ HematologyScreen }
+                    />
+
+                    <PrivateRoute 
+                        exact
+                        isAuthenticated={ isLoggedIn }
+                        path="/patient/historycurrent/:patientId"
+                        component={ HistoryCurrentScreen }
+                    />
+
+                    <PrivateRoute 
+                        exact
+                        isAuthenticated={ isLoggedIn }
+                        path="/patient/metabolic/:patientId"
+                        component={ MetabolicScreen }
+                    />
+
+                    <PrivateRoute 
+                        exact
+                        isAuthenticated={ isLoggedIn }
+                        path="/patient/neurological/:patientId"
+                        component={ NeurologicalScreen }
+                    />
+
+                    <PrivateRoute 
+                        exact
+                        isAuthenticated={ isLoggedIn }
+                        path="/patient/prescription/:patientId"
+                        component={ PrescriptionScreen }
+                    />
+
+                    <PrivateRoute 
+                        exact
+                        isAuthenticated={ isLoggedIn }
+                        path="/patient/respiratory/:patientId"
+                        component={ RespiratoryScreen }
+                    />
+
+                    <PrivateRoute 
+                        exact
+                        isAuthenticated={ isLoggedIn }
+                        path="/patient/task/:patientId"
+                        component={ TaskScreen }
+                    />
+
                     <Redirect to="/auth/login" />
-
-
                 </Switch>
             </div>
         </Router>

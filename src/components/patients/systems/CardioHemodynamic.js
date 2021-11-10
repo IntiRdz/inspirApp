@@ -1,24 +1,23 @@
 import React, { useMemo } from 'react';
 import { useParams, Redirect } from 'react-router-dom';
-import { getHeroById } from '../../../selectors/getHeroById';
+import { getPatientById } from '../../../selectors/getPatientById';
 import { Link } from 'react-router-dom';
-import { Id } from '../../../assets/icons/Id';
+import { Heart } from '../../../assets/icons/Heart';
 
-export const IdentiFile = ({ history }) => {
+export const CardioHemodynamic = ( ) => {
 
-    const { heroeId } = useParams();
-    
-    const hero = useMemo(() => getHeroById( heroeId ), [ heroeId ]);
-    
-    
-    if ( !hero ) {
+    const { patientId } = useParams();
+
+    const patient = useMemo(() => getPatientById( patientId ), [ patientId ]);
+
+
+    if ( !patient ) {
         return <Redirect to="/" />;
     }
-    
+
     const {
         id,
         pacFechaRegistro,
-        pacExpediente,
         status,
         pacApe1,
         pacApe2,
@@ -27,20 +26,17 @@ export const IdentiFile = ({ history }) => {
         pacFN,
         pacGen,
         religion,
+        pacExpediente,
         cama
-    } = hero;
-
-    const ingreso = new Date("2021-09-12");
-    console.log(ingreso);
-   
+    } = patient;
     
     return (
-        <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to={ `./identifile/${ id }` }>
+        <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to={ `./cardiohemodynamic/${ id }` }>
             <div className="cardsystem">
-                <Id fill='white'/>
+                <Heart fill='white'/>
                 <div className="row card__name">
                     <div className="col-10 card__text">
-                    <h1 className="name__text">Ficha de Identificación</h1>
+                    <h1 className="name__text">Cardiohemodinámico</h1>
                     </div>
                     <div className="col-2 identifier">
                         {cama }
@@ -55,6 +51,6 @@ export const IdentiFile = ({ history }) => {
                     </p>
                 </div>
             </div>
-        </Link>
+         </Link>
     )
 }

@@ -1,24 +1,23 @@
 import React, { useMemo } from 'react';
 import { useParams, Redirect } from 'react-router-dom';
-import { getHeroById } from '../../../selectors/getHeroById';
+import { getPatientById } from '../../../selectors/getPatientById';
 import { Link } from 'react-router-dom';
-import { Idx } from '../../../assets/icons/Idx';
+import { HistoryClock } from '../../../assets/icons/HistoryClock';
 
-export const Diagnostics = ( ) => {
+export const Evolution = ( ) => {
 
-    const { heroeId } = useParams();
+    const { patientId } = useParams();
 
-    const hero = useMemo(() => getHeroById( heroeId ), [ heroeId ]);
+    const patient = useMemo(() => getPatientById( patientId ), [ patientId ]);
 
 
-    if ( !hero ) {
+    if ( !patient ) {
         return <Redirect to="/" />;
     }
 
     const {
         id,
         pacFechaRegistro,
-        pacExpediente,
         status,
         pacApe1,
         pacApe2,
@@ -28,16 +27,15 @@ export const Diagnostics = ( ) => {
         pacGen,
         religion,
         cama
-
-    } = hero;
+    } = patient;
     
     return (
-        <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to={ `./diagnostics/${ id }` }>
+        <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to={ `./evolution/${ id }` }>
             <div className="cardsystem">
-                <Idx fill='white'/>
+                <HistoryClock fill='white'/>
                 <div className="row card__name">
                     <div className="col-10 card__text">
-                    <h1 className="name__text">Diagnósticos</h1>
+                    <h1 className="name__text">Evolución</h1>
                     </div>
                     <div className="col-2 identifier">
                         {cama }

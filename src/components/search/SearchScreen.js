@@ -15,7 +15,7 @@ export const SearchScreen = ({ history }) => {
     });
     const { searchText } = formValues;
     
-    const heroesFiltered = useMemo(() => getPatientsByName( q ), [q])
+    const patientsFiltered = useMemo(() => getPatientsByName( q ), [q])
 
 
     const handleSearch = (e) => {
@@ -24,20 +24,20 @@ export const SearchScreen = ({ history }) => {
     }
 
     return (
-        <div>
-            <h1>Search Screen</h1>
+        <div class="container pt-5">
+            <h1>Buscar Paciente</h1>
             <hr />
             
             <div className="row">
                 
                 <div className="col-5">
-                    <h4> Search Form </h4>
+                    <h4> Busqueda</h4>
                     <hr />
 
                     <form onSubmit={ handleSearch }>
                         <input 
                             type="text"
-                            placeholder="Find your hero"
+                            placeholder="Introduzca el nombre del paciente"
                             className="form-control"
                             name="searchText"
                             autoComplete="off"
@@ -49,7 +49,7 @@ export const SearchScreen = ({ history }) => {
                             type="submit"
                             className="btn m-1 btn-block btn-outline-primary"
                         >
-                            Buscando...
+                            Buscar
                         </button>
                     </form>
 
@@ -71,15 +71,15 @@ export const SearchScreen = ({ history }) => {
                     }
 
                     { 
-                        (q !=='' && heroesFiltered.length === 0 ) 
+                        (q !=='' && patientsFiltered.length === 0 ) 
                             && 
                             <div className="alert alert-danger">
-                                No hay registro de paciente con  { q }
+                                No hay registro de pacientes con el nombre  { q }
                             </div>
                     }
 
                     {
-                        heroesFiltered.map( patient => (
+                        patientsFiltered.map( patient => (
                             <PatientCard 
                                 key={ patient.id }
                                 { ...patient }

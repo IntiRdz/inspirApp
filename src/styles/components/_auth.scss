@@ -9,7 +9,7 @@
 
 .auth__box-container {
   background-color: white;
-  border: cadetblue solid;
+  border: none;
   border-radius: 2px;
   padding: 30px;
   width: 350px;
@@ -34,6 +34,10 @@
   justify-content: center;
   margin-bottom: 10px;
   padding: 5px
+}
+
+.copyright{
+  text-align: center;
 }
 
 @keyframes respirar {

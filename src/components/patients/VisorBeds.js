@@ -8,7 +8,6 @@ export const VisorBeds = ({ status }) => {
 
     return (
         <>
-            {/* <div className="card-group animate__animated animate__fadeIn"> */}
             <div className="beds">
             {
                 patients.map( patient => (

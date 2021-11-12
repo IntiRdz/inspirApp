@@ -7,6 +7,7 @@ import { startLoginEmailPassword, startGoogleLogin } from '../../actions/auth';
 
 import { InspiraLogo } from '../../assets/icons/InspiraLogo';
 import { Google } from '../../assets/icons/Google';
+//import { InspiraLetter } from '../../assets/icons/InspiraLetter';
 
 export const LoginScreen = () => {
 
@@ -82,25 +83,23 @@ export const LoginScreen = () => {
 
                 <div
                     onClick={ handleGoogleLogin }
-                    className="w-60 btn btn-lg btn-dark mt-3 mt-5 mb-3" 
-                    
+                    className="btn btn-secondary buttonGoogle" 
                 >
-                    <Google width="20px" height="20px"/>
+                    <Google width="20px" height="18px"/>
                       <span className="ps-2">Ingresar con Google</span>
                 </div>
 
                
-                <br />
                 <Link 
                         to="/auth/register"
-                        className="link mt-3"
+                        className="link mt-4"
                     >
                         Crear una nueva Cuenta    
                 </Link>
             </form>
 
             
-            <p className="mt-5 mb-3 text-muted">&copy; 2021</p>
+            <p className="mt-3 text-muted copyright">Inspir@Corp-Ing &copy; 2021</p>
 
             </main>
         </>

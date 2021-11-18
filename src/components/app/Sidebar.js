@@ -26,7 +26,7 @@ export const Sidebar = () => {
                     <InspiraLogo />
                     <h1 className="text-light"><a href="index.html">Alex Smith</a></h1>
                     <div className="social-links mt-3 text-center">
-                    <a href="#" className="twitter"><i className="bi bi-activity"></i></a>
+                    <a href="#" className="twitter"><i class="fab fa-accusoft"></i></a>
                     <a href="#" className="facebook"><i className="bi bi-activity"></i></a>
                     <a href="#" className="instagram"><i className="bi bi-activity"></i></a>
                     <a href="#" className="google-plus"><i className="bi bi-activity"></i></a>

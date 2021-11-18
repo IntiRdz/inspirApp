@@ -53,6 +53,7 @@ export const IdentiFile = ({ history }) => {
                     <p className="description__text">
                     “ I was an EMT "
                     </p>
+                    <p> Género { pacGen }</p>
                 </div>
             </div>
         </Link>

@@ -4,7 +4,7 @@ export const patients = [
         'pacFechaRegistro':'15/09/2021',
         'pacApe1':'Pérez',
         'pacApe2':'Martínez',
-        'pacNom':'Juan',
+        'pacNom':'Inti',
         'pacEdad':'37',
         'pacFN':'20-09-1983',
         'pacGen':'Masculino',

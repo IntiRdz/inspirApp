@@ -42,6 +42,7 @@ export const LoginScreen = () => {
             >
                 
                 <div className="banner_img">
+                {/* <div className="animate__animated animate__fadeInDown"> */}
                     <InspiraLogo fill="#1c4e92" width="180px" height="180px" />
                     {/* <InspiraLetter fill="#5290BE" width="300px" height="150px" /> */}
                 </div>

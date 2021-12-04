@@ -14,6 +14,7 @@ import { Respiratory } from './systems/Respiratory';
 import { Metabolic } from './systems/Metabolic';
 import { Digestive } from './systems/Digestive';
 import { Hematology } from './systems/Hematology';
+import Navbar from '../app/Navbar';
 
 export const PatientScreen = ({ history }) => {
 
@@ -75,6 +76,7 @@ export const PatientScreen = ({ history }) => {
                 <div className="cards cards-12">
                     <Hematology />
                 </div>
+                <Navbar />
             </main>
 
             

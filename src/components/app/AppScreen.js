@@ -1,18 +1,14 @@
 import React from 'react';
-import { Sidebar } from './Sidebar';
 import { ContentBedScreen } from './ContentBedScreen';
-import { Footer } from './Footer';
+import Navbar from './Navbar';
 
 
 export const AppScreen = () => {
    
     return (
         <>
-            <Sidebar />
+            <Navbar />
             <ContentBedScreen />
-            <Footer />
-            <div className="back-to-top d-flex"> Gola</div>
-
         </>
     )
 }

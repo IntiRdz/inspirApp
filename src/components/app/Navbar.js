@@ -1,22 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
-import Button from "./Button";
-import { navItems } from "./NavItems.js";
+import * as Icons from "react-icons/fa";
+import { navItems } from "./navItems.js";
+import ButtonLogout from "./ButtonLogout";
 
 function Navbar() {
   const [mobile, setMobile] = useState(false);
   const [sidebar, setSidebar] = useState(false);
+  const list = document.querySelectorAll ('.list');
+  function activeLink () {
+      list.forEach((item) =>
+      item.classList.remove('active'));
+      this.classList.add ('active');
+  }
+  list.forEach ((item) => 
+  item.addEventListener ('click',activeLink));
 
   useEffect(() => {
-    if (window.innerWidth < 1065) {
+    if (window.innerWidth < 700) {
       setMobile(true);
     }
   }, []);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 1065) {
+      if (window.innerWidth < 700) {
         setMobile(true);
       } else {
         setMobile(false);
@@ -33,47 +41,48 @@ function Navbar() {
   return (
     <>
       <nav className="navbar">
-        <Link to="/" className="navbar-logo" onClick={() => setSidebar(false)}>
-        <i class="bi bi-search"></i>
-          PIPER
-        </Link>
+      <Link to="/" className="navbar-logo" onClick={() => setSidebar(false)}>
+      <Icons.FaEnvira />
+      </Link>
+      <ButtonLogout />
         {!mobile && (
-          <ul className="nav-items">
+          <ul>
             {navItems.map((item) => {
               return (
-                <li key={item.id} className={item.nName}>
+                <li className="list"
+
+                  key={item.id}>
                   <Link to={item.path}>
-                    {item.icon}
-                    <span>{item.title}</span>
+                    <span className="icon">
+                      {item.icon}
+                    </span>
+                    <span className="title">
+                      {item.title}
+                    </span>
                   </Link>
                 </li>
               );
             })}
+            <div className="indicator"></div>
           </ul>
         )}
-        {!mobile && <Button />}
-
+        {!mobile && <ButtonLogout />}
         {mobile && (
           <div className="sidebar-toggle">
             {sidebar ? (
-              <i
-                class="bi bi-search"
+              <Icons.FaTimes
                 className="sidebar-toggle-logo"
                 onClick={() => setSidebar(!sidebar)}
-              >
-              </i>
+              />
             ) : (
-              <i 
-                class="bi bi-search"
+              <Icons.FaBars
                 className="sidebar-toggle-logo"
                 onClick={() => setSidebar(!sidebar)}
-              >
-              </i>
+              />
             )}
           </div>
         )}
       </nav>
-
       <div className={sidebar ? "sidebar active" : "sidebar"}>
         <ul className="sidebar-items">
           {navItems.map((item) => {
@@ -91,10 +100,11 @@ function Navbar() {
             );
           })}
         </ul>
-        <Button onClick={() => setSidebar(false)} />
+        <ButtonLogout onClick={() => setSidebar(false)} />
       </div>
     </>
   );
+
 }
 
 export default Navbar;

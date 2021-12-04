@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { VisorBeds } from '../patients/VisorBeds';
-import { Sidebar } from '../app/Sidebar';
+import Navbar from '../app/Navbar';
 
 export const MarvelScreen = () => {
 
@@ -10,7 +10,7 @@ export const MarvelScreen = () => {
             className="journal__main-content animate__animated animate__fadeIn animate__faster"
         >
             
-            <Sidebar />
+            <Navbar />
 
             <main>
                 <h1>Ambulatorio</h1>

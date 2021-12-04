@@ -1,36 +1,53 @@
-import React from 'react'
+import React from 'react';
+import * as Icons from "react-icons/fa";
 
 export const navItems = [
   {
     id: 1,
-    title: "Home",
+    title: "Inicio",
     path: "./",
-    nName: "nav-item",
+    nName: "list",
     sName: "sidebar-item",
-    icon: <i class="bi bi-grid"></i>,
+    icon: <Icons.FaGripHorizontal />,
   },
   {
     id: 2,
-    title: "Services",
+    title: "Servicios",
     path: "./services",
-    nName: "nav-item",
+    nName: "list",
     sName: "sidebar-item",
-    icon: <i class="bi bi-grid"></i>,
+    icon: <Icons.FaBriefcase />,
   },
   {
     id: 3,
-    title: "Products",
+    title: "Productos",
     path: "./products",
-    nName: "nav-item",
+    nName: "list",
     sName: "sidebar-item",
-    icon: <i class="bi bi-grid"></i>,
+    icon: <Icons.FaCartArrowDown />,
   },
   {
     id: 4,
-    title: "Contact Us",
+    title: "Configuración",
     path: "./contactus",
-    nName: "nav-item",
+    nName: "list",
     sName: "sidebar-item",
-    icon: <i class="bi bi-grid"></i>,
+    icon: <Icons.FaPhone />,
   },
+/*   {
+    id: 5,
+    title: "Cinco",
+    path: "./contactus",
+    nName: "list",
+    sName: "sidebar-item",
+    icon: <Icons.FaPhone />,
+  }, */
+/*   {
+    id: 6,
+    title: "Seis",
+    path: "./contactus",
+    nName: "list",
+    sName: "sidebar-item",
+    icon: <Icons.FaPhone />,
+  }, */
 ];

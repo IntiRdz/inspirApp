@@ -1,24 +1,27 @@
 
 // PATRÓN DE COLORES 
-$background1: rgb(117, 65, 200);
+$background: rgb(117, 65, 200);
+$background1: rgba(88, 88, 88, 0.643);
 
 $principal: rgb(28, 78, 146);
-$dark-grey: rgba(175, 173, 180, 0.643);
-$light-grey: rgb(216, 216, 216);
 $terciario: rgba(117, 65, 200, 0.815);
 
-$moderate-violet: rgb(117, 65, 200);
+
+$dark-gray: rgba(175, 173, 180, 0.643);
+$light-gray: rgb(216, 216, 216);
+
 $very-dark-grayish-blue: rgb(46, 95, 173);
 $very-dark-blackish-blue: hsl(219, 29%, 14%);
 
-$light-gray: rgb(207, 207, 207);
 $light-grayish-blue: rgb(236, 242, 248);
+
+$moderate-violet: rgb(117, 65, 200);
 
 
 // MODIFICACION DE BOOTSTRAP
 
 $primary:           $principal;
-$secondary:         $dark-grey;
+$secondary:         $dark-gray;
 
 
 $enable-rounded:    true;

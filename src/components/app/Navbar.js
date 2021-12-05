@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import * as Icons from "react-icons/fa";
 import { navItems } from "./navItems.js";
 import ButtonLogout from "./ButtonLogout";
@@ -7,14 +7,6 @@ import ButtonLogout from "./ButtonLogout";
 function Navbar() {
   const [mobile, setMobile] = useState(false);
   const [sidebar, setSidebar] = useState(false);
-  const list = document.querySelectorAll ('.list');
-  function activeLink () {
-      list.forEach((item) =>
-      item.classList.remove('active'));
-      this.classList.add ('active');
-  }
-  list.forEach ((item) => 
-  item.addEventListener ('click',activeLink));
 
   useEffect(() => {
     if (window.innerWidth < 700) {
@@ -44,7 +36,6 @@ function Navbar() {
       <Link to="/" className="navbar-logo" onClick={() => setSidebar(false)}>
       <Icons.FaEnvira />
       </Link>
-      <ButtonLogout />
         {!mobile && (
           <ul>
             {navItems.map((item) => {
@@ -52,14 +43,14 @@ function Navbar() {
                 <li className="list"
 
                   key={item.id}>
-                  <Link to={item.path}>
+                  <NavLink exact to={item.path} activeClassName="active" >
                     <span className="icon">
                       {item.icon}
                     </span>
                     <span className="title">
                       {item.title}
                     </span>
-                  </Link>
+                  </NavLink>
                 </li>
               );
             })}

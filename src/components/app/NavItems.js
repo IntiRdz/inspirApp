@@ -1,5 +1,6 @@
 import React from 'react';
 import * as Icons from "react-icons/fa";
+import { FiSettings } from "react-icons/fi";
 
 export const navItems = [
   {
@@ -29,25 +30,10 @@ export const navItems = [
   {
     id: 4,
     title: "Configuración",
-    path: "./contactus",
+    path: "./userconfig",
     nName: "list",
     sName: "sidebar-item",
-    icon: <Icons.FaPhone />,
+    icon: <FiSettings />,
   },
-/*   {
-    id: 5,
-    title: "Cinco",
-    path: "./contactus",
-    nName: "list",
-    sName: "sidebar-item",
-    icon: <Icons.FaPhone />,
-  }, */
-/*   {
-    id: 6,
-    title: "Seis",
-    path: "./contactus",
-    nName: "list",
-    sName: "sidebar-item",
-    icon: <Icons.FaPhone />,
-  }, */
+
 ];

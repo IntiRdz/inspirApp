@@ -1,3 +1,7 @@
+body{
+  background: linear-gradient(to bottom, #f1f4f9, $primary);
+}
+
 .contenido {
   display: grid;
   grid-template-columns: 1fr;

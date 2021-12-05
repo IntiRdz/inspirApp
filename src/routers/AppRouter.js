@@ -31,6 +31,7 @@ import { NeurologicalScreen }       from '../components/patients/systems/Neurolo
 import { PrescriptionScreen }       from '../components/patients/systems/PrescriptionScreen';
 import { RespiratoryScreen }        from '../components/patients/systems/RespiratoryScreen';
 import { TaskScreen }               from '../components/patients/systems/TaskScreen';
+import { ConfigUser } from '../pages/ConfigUser';
 
 export const AppRouter = () => {
 
@@ -80,6 +81,13 @@ export const AppRouter = () => {
                         isAuthenticated={ isLoggedIn }
                         path="/"
                         component={ AppScreen }
+                    />
+
+                    <PrivateRoute 
+                        exact
+                        isAuthenticated={ isLoggedIn }
+                        path="/userconfig"
+                        component={ ConfigUser }
                     />
 
                     <PrivateRoute 

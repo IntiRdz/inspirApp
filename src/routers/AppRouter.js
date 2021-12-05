@@ -11,14 +11,13 @@ import { firebase } from '../firebase/firebase-config'
 import { AuthRouter } from './AuthRouter';
 import { PrivateRoute } from './PrivateRoute';
 
-import { AppScreen } from '../components/app/AppScreen';
 import { login } from '../actions/auth';
 import { PublicRoute } from './PublicRoute';
 import { startLoadingNotes } from '../actions/notes';
 
-import { PatientScreen } from '../components/patients/PatientScreen';
-import { SearchScreen } from '../components/search/SearchScreen';
-import { MarvelScreen } from '../components/marvel/MarvelScreen';
+import { AppScreen } from '../pages/AppScreen';
+import { PatientScreen } from '../pages/PatientScreen';
+import { SearchScreen } from '../pages/SearchScreen';
 
 import { IdentiFileScreen }         from '../components/patients/systems/IdentiFileScreen';
 import { CardioHemodynamicScreen }  from '../components/patients/systems/CardioHemodynamicScreen';
@@ -26,12 +25,12 @@ import { DiagnosticsScreen }        from '../components/patients/systems/Diagnos
 import { DigestiveScreen }          from '../components/patients/systems/DigestiveScreen';
 import { EvolutionScreen }          from '../components/patients/systems/EvolutionScreen';
 import { HematologyScreen }         from '../components/patients/systems/HematologyScreen';
-import { HistoryCurrentScreen } from '../components/patients/systems/HistoryCurrentScreen';
-import { MetabolicScreen } from '../components/patients/systems/MetabolicScreen';
-import { NeurologicalScreen } from '../components/patients/systems/NeurologicalScreen';
-import { PrescriptionScreen } from '../components/patients/systems/PrescriptionScreen';
-import { RespiratoryScreen } from '../components/patients/systems/RespiratoryScreen';
-import { TaskScreen } from '../components/patients/systems/TaskScreen';
+import { HistoryCurrentScreen }     from '../components/patients/systems/HistoryCurrentScreen';
+import { MetabolicScreen }          from '../components/patients/systems/MetabolicScreen';
+import { NeurologicalScreen }       from '../components/patients/systems/NeurologicalScreen';
+import { PrescriptionScreen }       from '../components/patients/systems/PrescriptionScreen';
+import { RespiratoryScreen }        from '../components/patients/systems/RespiratoryScreen';
+import { TaskScreen }               from '../components/patients/systems/TaskScreen';
 
 export const AppRouter = () => {
 
@@ -95,13 +94,6 @@ export const AppRouter = () => {
                         isAuthenticated={ isLoggedIn }
                         path="/search"
                         component={ SearchScreen }
-                    />
-
-                    <PrivateRoute 
-                        exact
-                        isAuthenticated={ isLoggedIn }
-                        path="/marvel"
-                        component={ MarvelScreen }
                     />
 
                     <PrivateRoute 

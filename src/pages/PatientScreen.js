@@ -1,20 +1,21 @@
 import React, { useMemo } from 'react';
 import { useParams, Redirect } from 'react-router-dom';
-import { getPatientById } from '../../selectors/getPatientById';
+import { getPatientById } from '../selectors/getPatientById';
 
-import { IdentiFile } from './systems/IdentiFile';
-import { Diagnostics } from './systems/Diagnostics';
-import { HistoryCurrent } from './systems/HistoryCurrent';
-import { Evolution } from './systems/Evolution';
-import { Prescription } from './systems/Prescription';
-import { Task } from './systems/Task';
-import { Neurological } from './systems/Neurological';
-import { CardioHemodynamic } from './systems/CardioHemodynamic';
-import { Respiratory } from './systems/Respiratory';
-import { Metabolic } from './systems/Metabolic';
-import { Digestive } from './systems/Digestive';
-import { Hematology } from './systems/Hematology';
-import Navbar from '../app/Navbar';
+import { IdentiFile } from '../components/patients/systems/IdentiFile';
+import { Diagnostics } from '../components/patients/systems/Diagnostics';
+import { HistoryCurrent } from '../components/patients/systems/HistoryCurrent';
+import { Evolution } from '../components/patients/systems/Evolution';
+import { Prescription } from '../components/patients/systems/Prescription';
+import { Task } from '../components/patients/systems/Task';
+import { Neurological } from '../components/patients/systems/Neurological';
+import { CardioHemodynamic } from '../components/patients/systems/CardioHemodynamic';
+import { Respiratory } from '../components/patients/systems/Respiratory';
+import { Metabolic } from '../components/patients/systems/Metabolic';
+import { Digestive } from '../components/patients/systems/Digestive';
+import { Hematology } from '../components/patients/systems/Hematology';
+import Navbar from '../components/app/Navbar';
+
 
 export const PatientScreen = ({ history }) => {
 

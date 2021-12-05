@@ -17,7 +17,6 @@ export const DashboardRoutes = () => {
                     <Route exact path="/patient/:patientId" component={ PatientScreen } />
                     <Route exact path="/app" component={ AppScreen } />
                     <Route exact path="/search" component={ SearchScreen } />
-
                     <Redirect to="/marvel" />
                 </Switch>
             </div>

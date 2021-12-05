@@ -12,11 +12,11 @@ export const navItems = [
   },
   {
     id: 2,
-    title: "Servicios",
-    path: "./services",
+    title: "Buscar",
+    path: "./search",
     nName: "list",
     sName: "sidebar-item",
-    icon: <Icons.FaBriefcase />,
+    icon: <Icons.FaSistrix />,
   },
   {
     id: 3,

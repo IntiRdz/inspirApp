@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector} from 'react-redux';
 import validator from 'validator';
 
-import { useForm } from '../../hooks/useForm';
-import { setError, removeError } from '../../actions/ui';
-import { startRegisterWithEmailPasswordName } from '../../actions/auth';
-import { InspiraLetter } from '../../assets/icons/InspiraLetter';
+import { useForm } from '../hooks/useForm';
+import { setError, removeError } from '../actions/ui';
+import { startRegisterWithEmailPasswordName } from '../actions/auth';
+import { InspiraLetter } from '../assets/icons/InspiraLetter';
 
 export const RegisterScreen = () => {
 

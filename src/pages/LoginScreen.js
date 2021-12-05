@@ -1,12 +1,12 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-
 import { Link } from 'react-router-dom';
-import { useForm } from '../../hooks/useForm';
-import { startLoginEmailPassword, startGoogleLogin } from '../../actions/auth';
 
-import { Google } from '../../assets/icons/Google';
-import { InspiraLetter } from '../../assets/icons/InspiraLetter'
+import { useForm } from '../hooks/useForm';
+import { startLoginEmailPassword, startGoogleLogin } from '../actions/auth';
+
+import { Google } from '../assets/icons/Google';
+import { InspiraLetter } from '../assets/icons/InspiraLetter'
 //import { InspiraLogo } from '../../assets/icons/InspiraLogo'
 
 export const LoginScreen = () => {
